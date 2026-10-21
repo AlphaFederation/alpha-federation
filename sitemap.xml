@@ -1,20 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://alphafederation.pages.dev/about.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/contact.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/faq.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/financial-education.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/financial-safety.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/index.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/market-basics.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/money-skills.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/mutual-funds.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/offer-icici-mf.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/offer-kotak811.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/offer-upstox.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/referral-affiliate.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/services-resources.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/terms.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/trading-investing.html</loc></url>
-  <url><loc>https://alphafederation.pages.dev/why-choose.html</loc></url>
+
+  <!-- Home Page (index.html) -->
+  <url>
+    <loc>https://alphafederation.pages.dev/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Core Financial & Offer Pages -->
+  <url>
+    <loc>https://alphafederation.pages.dev/mutual-funds.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/offer-upstox.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/offer-kotak811.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/offer-icici-mf.html</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/referral-affiliate.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Education, Trading & Resources -->
+  <url>
+    <loc>https://alphafederation.pages.dev/financial-education.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/market-basics.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/money-skills.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/trading-investing.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/financial-safety.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/services-resources.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/why-choose.html</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Info, Policy & Support Pages -->
+  <url>
+    <loc>https://alphafederation.pages.dev/about.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/faq.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/terms.html</loc>
+    <priority>0.5</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://alphafederation.pages.dev/contact.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
 </urlset>
