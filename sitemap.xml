@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Home Page (index.html) -->
+  <!-- Home Page -->
   <url>
     <loc>https://alphafederation.pages.dev/</loc>
     <priority>1.0</priority>
@@ -10,86 +10,86 @@
 
   <!-- Core Financial & Offer Pages -->
   <url>
-    <loc>https://alphafederation.pages.dev/mutual-funds.html</loc>
+    <loc>https://alphafederation.pages.dev/mutual-funds</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/offer-upstox.html</loc>
+    <loc>https://alphafederation.pages.dev/offer-upstox</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/offer-kotak811.html</loc>
+    <loc>https://alphafederation.pages.dev/offer-kotak811</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/offer-icici-mf.html</loc>
+    <loc>https://alphafederation.pages.dev/offer-icici-mf</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/referral-affiliate.html</loc>
+    <loc>https://alphafederation.pages.dev/referral-affiliate</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <!-- Education, Trading & Resources -->
   <url>
-    <loc>https://alphafederation.pages.dev/financial-education.html</loc>
+    <loc>https://alphafederation.pages.dev/financial-education</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/market-basics.html</loc>
+    <loc>https://alphafederation.pages.dev/market-basics</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/money-skills.html</loc>
+    <loc>https://alphafederation.pages.dev/money-skills</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/trading-investing.html</loc>
+    <loc>https://alphafederation.pages.dev/trading-investing</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/financial-safety.html</loc>
+    <loc>https://alphafederation.pages.dev/financial-safety</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/services-resources.html</loc>
+    <loc>https://alphafederation.pages.dev/services-resources</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/why-choose.html</loc>
+    <loc>https://alphafederation.pages.dev/why-choose</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <!-- Info, Policy & Support Pages -->
   <url>
-    <loc>https://alphafederation.pages.dev/about.html</loc>
+    <loc>https://alphafederation.pages.dev/about</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/faq.html</loc>
+    <loc>https://alphafederation.pages.dev/faq</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/terms.html</loc>
+    <loc>https://alphafederation.pages.dev/terms</loc>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://alphafederation.pages.dev/contact.html</loc>
+    <loc>https://alphafederation.pages.dev/contact</loc>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
