@@ -85,6 +85,50 @@ nav a:focus-visible,.btn:focus-visible,.menu:focus-visible{outline:2px solid var
 @media(max-width:600px){h1{font-size:clamp(39px,11vw,52px);letter-spacing:-1.7px}.hero p{max-width:38ch}.topic-card{box-shadow:0 6px 18px rgba(0,0,0,.14)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
+
+<style id="af-premium-redesign">
+:root{--bg:#06111f;--panel:#0b1b2c;--gold:#d9b45c;--gold2:#f1d48b;--muted:#a8b6c8;--line:#263b52}
+body{background:#050f1b;letter-spacing:.005em}
+header{background:rgba(5,15,27,.91);border-bottom-color:rgba(217,180,92,.18)}
+.nav{height:78px}.logo{border-radius:14px;background:linear-gradient(145deg,rgba(217,180,92,.14),rgba(217,180,92,.025));box-shadow:inset 0 0 0 1px rgba(217,180,92,.08)}
+.brand strong{letter-spacing:-.45px}.brand small{letter-spacing:1.55px}
+nav{gap:19px;font-size:13px}nav a{transition:color .2s ease}
+.hero{padding:70px 0 74px;background:radial-gradient(ellipse at 80% 20%,rgba(24,61,91,.55),transparent 42%),linear-gradient(120deg,#06111f 0%,#08192a 60%,#071321 100%)}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(330px,.88fr);gap:54px;align-items:center}
+.hero-copy{padding:10px 0}.eyebrow{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:2.2px}.eyebrow-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold2);box-shadow:0 0 0 5px rgba(241,212,139,.1)}
+h1{font-size:clamp(44px,5.2vw,66px);line-height:1.06;letter-spacing:-2.7px;margin:23px 0 19px;max-width:700px}.hero p{font-size:17px;line-height:1.8;max-width:590px;color:#b0bfd0}
+.actions{gap:12px;margin:27px 0 24px}.btn{min-height:48px;border-radius:10px;padding:13px 19px;font-size:13px;letter-spacing:.01em}.primary{box-shadow:0 7px 24px rgba(217,180,92,.12)}.secondary{background:rgba(255,255,255,.015)}
+.hero-proof{display:flex;flex-wrap:wrap;gap:10px 20px;color:#9aacc0;font-size:12px}.hero-proof span{display:flex;align-items:center;gap:7px}.hero-proof i{font-style:normal;color:var(--gold2);font-weight:900}
+.hero-panel{position:relative;padding:25px 25px 20px;border:1px solid rgba(217,180,92,.25);border-radius:22px;background:linear-gradient(145deg,rgba(16,37,58,.96),rgba(7,19,32,.98));box-shadow:0 25px 70px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.035);overflow:hidden}
+.hero-panel:before{content:"";position:absolute;top:-95px;right:-95px;width:220px;height:220px;border:1px solid rgba(217,180,92,.16);border-radius:50%;box-shadow:0 0 0 26px rgba(217,180,92,.025),0 0 0 52px rgba(217,180,92,.018);pointer-events:none}
+.panel-top{position:relative;display:flex;align-items:center;gap:10px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.08)}.panel-mark{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;border:1px solid rgba(217,180,92,.45);color:var(--gold2);font-weight:900;font-size:12px}.panel-label{font-size:10px;font-weight:800;letter-spacing:1.5px;color:#c2cede}.panel-status{margin-left:auto;font-size:9px;letter-spacing:1px;color:#91a5bb;display:flex;align-items:center;gap:6px}.panel-status b{width:6px;height:6px;border-radius:50%;background:#6fd2a2}
+.panel-heading{font-size:25px;font-weight:800;line-height:1.25;letter-spacing:-.65px;margin:22px 0 9px}.panel-sub{font-size:13px!important;line-height:1.6!important;margin:0 0 15px!important;color:#9fb0c3!important}
+.panel-link{position:relative;display:flex;align-items:center;gap:13px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:padding .2s ease}.panel-link:hover{padding-left:5px}.panel-icon{flex:0 0 35px;height:35px;display:grid;place-items:center;border-radius:10px;background:rgba(217,180,92,.08);border:1px solid rgba(217,180,92,.17);color:var(--gold2);font-size:11px;font-weight:800}.panel-link strong{display:block;font-size:13px;color:#f2f5f8}.panel-link small{display:block;font-size:11px;color:#91a4b9;margin-top:3px}.panel-arrow{margin-left:auto;color:var(--gold2);font-size:18px}.panel-foot{display:flex;align-items:center;gap:10px;font-size:9px;letter-spacing:1.15px;color:#71869d;margin-top:19px}.panel-line{width:24px;height:1px;background:var(--gold)}
+.topics{padding:70px 0 84px;background:linear-gradient(180deg,#071321 0%,#050f1b 100%)}.topic-intro{max-width:650px;margin:0 0 34px;text-align:left}.topic-intro .eyebrow{display:block}.topic-intro h2{font-size:clamp(31px,4vw,43px);letter-spacing:-1.25px;line-height:1.12;margin:13px 0}.topic-intro p{font-size:15px;line-height:1.75;max-width:570px}
+.topic-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.topic-card{min-height:218px;padding:25px 23px 22px;border-radius:15px;background:linear-gradient(145deg,rgba(14,32,51,.96),rgba(7,19,32,.98));border-color:rgba(130,158,188,.17);box-shadow:0 10px 28px rgba(0,0,0,.12)}.topic-card:before{left:23px;right:auto;width:38px;height:2px;opacity:.9}.topic-card h3{font-size:19px;letter-spacing:-.35px;line-height:1.35;margin:9px 0 10px}.topic-kicker{display:block;align-self:flex-start;margin:0 0 2px;color:var(--gold2);font-size:9px;font-weight:850;letter-spacing:1.35px;line-height:1.5}.topic-card .btn{white-space:normal}.topic-card p{font-size:13px;line-height:1.75;color:#9eafc2;margin-bottom:20px}.topic-card .btn{margin-top:auto;align-self:flex-start;min-height:39px;padding:9px 13px;font-size:12px;border-radius:8px}.topic-card.featured{border-color:rgba(217,180,92,.27);background:linear-gradient(145deg,rgba(17,39,60,.98),rgba(8,21,35,.98))}.topic-card:hover{transform:translateY(-4px);border-color:rgba(217,180,92,.65);box-shadow:0 18px 38px rgba(0,0,0,.24)}
+footer{background:#040b13;border-top-color:rgba(217,180,92,.16)}footer h3{letter-spacing:-.4px}footer h4{font-size:13px;color:#e8edf3;letter-spacing:.5px}.footergrid p, .footergrid a{line-height:1.8}.copy{border-top-color:rgba(255,255,255,.08)}
+@media(max-width:1000px){nav{gap:12px;font-size:12px}.hero-layout{gap:30px}.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.nav{height:70px}nav{top:70px}.hero{padding:53px 0 57px}.hero-layout{grid-template-columns:1fr;gap:35px}.hero-copy{padding:0}h1{font-size:clamp(40px,9vw,57px);line-height:1.07;letter-spacing:-1.8px}.hero p{font-size:15px;line-height:1.75}.hero-proof{gap:9px 15px}.hero-panel{padding:22px 20px 18px}.topics{padding:53px 0 62px}.topic-intro{margin-bottom:25px}.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.topic-card{min-height:215px;padding:22px 18px 19px}.topic-card:before{left:18px}.footergrid{gap:20px}}
+@media(max-width:520px){.brand strong{font-size:17px}.brand small{font-size:9px;letter-spacing:1px}.hero{padding-top:43px}.eyebrow{font-size:9px;letter-spacing:1.45px}.actions{flex-direction:column;align-items:stretch}.actions .btn{width:100%}.hero-proof{display:grid;grid-template-columns:1fr;gap:9px}.panel-heading{font-size:23px}.topic-grid{grid-template-columns:1fr}.topic-card{min-height:0;padding:22px}.topic-card p{max-width:44ch}.footergrid{grid-template-columns:1fr}.footergrid>div{padding-bottom:4px}.topic-intro h2{font-size:31px}}
+@media(prefers-reduced-motion:reduce){.panel-link,.topic-card,.btn{transition:none!important}}
+/* Signature three-line hero headline */
+.hero-title{display:flex;flex-direction:column;gap:2px;font-size:clamp(48px,6.4vw,76px);line-height:1.02;letter-spacing:-3.2px;margin:22px 0 24px;max-width:760px}
+.hero-title>span{display:block}
+.hero-title .gold{padding-bottom:5px}
+@media(max-width:760px){.hero-title{font-size:clamp(44px,8.2vw,60px);letter-spacing:-2px;line-height:1.05}}
+@media(max-width:520px){.hero-title{font-size:clamp(39px,10vw,49px);letter-spacing:-1.6px;line-height:1.08;gap:3px}}
+
+/* Final copy and visual polish */
+.hero-copy h1 .gold{background:linear-gradient(100deg,#f4dc9c 0%,#d9b45c 65%,#f1d48b 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-copy h1{max-width:680px;text-wrap:balance}
+.hero-copy>p{max-width:570px}
+.hero-panel{backdrop-filter:blur(8px)}
+.panel-link:last-of-type{border-bottom-color:rgba(255,255,255,.035)}
+.topic-intro h2{max-width:620px;text-wrap:balance}
+.topic-intro p{color:#a9b8ca}
+@media(max-width:520px){.hero-copy h1{font-size:clamp(37px,10vw,49px);line-height:1.09;letter-spacing:-1.5px}.hero-copy>p{font-size:15px}.hero-panel{border-radius:18px}}
+</style>
+
 </head>
 <body>
 <header>
@@ -105,26 +149,32 @@ nav a:focus-visible,.btn:focus-visible,.menu:focus-visible{outline:2px solid var
 </div>
 </header>
 <main id="top">
-<section class="hero"><div class="container">
-<div class="eyebrow">ALPHA FEDERATION</div>
-<h1>Learn smarter.<br/><span class="gold">Trade better.</span><br/>Build your financial future.</h1>
-<p>Practical financial education and market-focused resources for people who want to understand finance, trading and investing with greater confidence.</p>
-<div class="actions"><a class="btn primary" href="/financial-education">Explore Education</a><a class="btn secondary" href="/services-resources">View Services</a></div>
-<div class="checks"><span>✓ Practical learning</span><span>✓ Transparent information</span><span>✓ Beginner friendly</span></div>
+<section class="hero"><div class="container hero-layout">
+<div class="hero-copy"><div class="eyebrow"><span class="eyebrow-dot"></span> FINANCIAL KNOWLEDGE. PRACTICAL GUIDANCE.</div>
+<h1 class="hero-title"><span>Learn smarter.</span><span>Trade better.</span><span class="gold">Build your future.</span></h1>
+<p>Build your understanding of money, markets and investing with clear guidance designed to help you learn, assess risk and move forward with confidence.</p>
+<div class="actions"><a class="btn primary" href="/financial-education">Start Learning <span aria-hidden="true">↗</span></a><a class="btn secondary" href="#topics">Explore Our Resources</a></div>
+<div class="hero-proof"><span><i>✓</i> Practical knowledge</span><span><i>✓</i> Risk comes first</span><span><i>✓</i> Learn at your own pace</span></div>
+</div>
+<aside class="hero-panel" aria-label="Alpha Federation learning overview"><div class="panel-top"><span class="panel-mark">AF</span><span class="panel-label">YOUR LEARNING HUB</span><span class="panel-status"><b></b> EXPLORE</span></div><div class="panel-heading">Better decisions begin<br><span class="gold">with understanding.</span></div><p class="panel-sub">Start with the topic that matters to you and build your understanding step by step.</p>
+<a class="panel-link" href="/financial-education"><span class="panel-icon">01</span><span><strong>Financial Education</strong><small>Markets, investing & money skills</small></span><span class="panel-arrow">↗</span></a>
+<a class="panel-link" href="/trading-instruction"><span class="panel-icon">02</span><span><strong>Trading Instructions</strong><small>Rules, risk & disciplined execution</small></span><span class="panel-arrow">↗</span></a>
+<a class="panel-link" href="/mutual-funds"><span class="panel-icon">03</span><span><strong>Mutual Funds</strong><small>SIPs, diversification & basics</small></span><span class="panel-arrow">↗</span></a>
+<div class="panel-foot"><span class="panel-line"></span> LEARN WITH PURPOSE. ACT WITH CARE.</div></aside>
 </div></section>
 <section class="topics" id="topics"><div class="container">
-<div class="topic-intro"><div class="eyebrow">EXPLORE ALPHA FEDERATION</div><h2>What would you like to explore?</h2><p>Choose a topic to view the complete information.</p></div>
+<div class="topic-intro"><div class="eyebrow">EXPLORE OUR RESOURCES</div><h2>Knowledge for every next step.</h2><p>From learning the basics to exploring practical tools, find the guidance that matches your goals.</p></div>
 <div class="topic-grid">
-<article class="topic-card featured"><h3> <span data-en="Why Choose Alpha Federation" data-hi="Alpha Federation क्यों चुनें">Why Choose Alpha Federation</span> </h3><p>See what makes our approach simple, transparent and practical.</p><a class="btn secondary" href="/why-choose"> <span data-en="View Details →" data-hi="विवरण देखें →">View Details →</span> </a></article>
-<article class="topic-card"><h3> <span data-en="Financial Education" data-hi="वित्तीय शिक्षा">Financial Education</span> </h3><p>Learn markets, investing and personal finance in a simple format.</p><a class="btn secondary" href="/financial-education">View Details →</a></article>
-<article class="topic-card featured trading-topic"><div class="topic-kicker">PRACTICAL TRADING GUIDE</div><h3>Trading Instructions</h3><p>Understand trading rules, risk management, position sizing and disciplined decision-making step by step.</p><a class="btn secondary" href="/trading-instruction">Explore Guide →</a></article>
-<article class="topic-card"><h3>Services &amp; Resources</h3><p>Explore useful market-focused resources and information.</p><a class="btn secondary" href="/services-resources">View Details →</a></article>
-<article class="topic-card featured"><h3>Referral &amp; Affiliate</h3><p>Explore currently available financial-product referral opportunities.</p><a class="btn secondary" href="/referral-affiliate">View Details →</a></article>
-<article class="topic-card featured"><h3>Mutual Funds</h3><p>Learn the basics of Mutual Funds, SIPs, risks and investing.</p><a class="btn secondary" href="/mutual-funds">View Details →</a></article>
-<article class="topic-card"><h3> <span data-en="Frequently Asked Questions" data-hi="अक्सर पूछे जाने वाले प्रश्न">Frequently Asked Questions</span> </h3><p>Find quick answers about our education, offers and services.</p><a class="btn secondary" href="/faq">View Details →</a></article>
-<article class="topic-card"><h3>Terms &amp; Conditions</h3><p>Review important disclaimers and operating terms.</p><a class="btn secondary" href="/terms">View Details →</a></article>
-<article class="topic-card"><h3> <span data-en="About Alpha Federation" data-hi="Alpha Federation के बारे में">About Alpha Federation</span> </h3><p>Learn about Alpha Federation and what we aim to provide.</p><a class="btn secondary" href="/about">View Details →</a></article>
-<article class="topic-card"><h3> <span data-en="Contact Alpha Federation" data-hi="Alpha Federation से संपर्क करें">Contact Alpha Federation</span> </h3><p>Connect with us for enquiries, offers or partnerships.</p><a class="btn secondary" href="/contact">View Details →</a></article>
+<article class="topic-card featured"><div class="topic-kicker">OUR APPROACH</div><h3> <span data-en="Why Choose Alpha Federation" data-hi="Alpha Federation क्यों चुनें">Why Choose Alpha Federation</span> </h3><p>See what makes our approach simple, transparent and practical.</p><a class="btn secondary" href="/why-choose">Our Approach ↗</a></article>
+<article class="topic-card"><div class="topic-kicker">LEARN &amp; GROW</div><h3> <span data-en="Financial Education" data-hi="वित्तीय शिक्षा">Financial Education</span> </h3><p>Learn markets, investing and personal finance in a simple format.</p><a class="btn secondary" href="/financial-education">Explore Education ↗</a></article>
+<article class="topic-card featured trading-topic"><div class="topic-kicker">TRADING WITH DISCIPLINE</div><h3>Trading Instructions</h3><p>Understand trading rules, risk management, position sizing and disciplined decision-making step by step.</p><a class="btn secondary" href="/trading-instruction">Trading Guide ↗</a></article>
+<article class="topic-card"><div class="topic-kicker">TOOLS &amp; SUPPORT</div><h3>Services &amp; Resources</h3><p>Explore useful market-focused resources and information.</p><a class="btn secondary" href="/services-resources">Explore Services ↗</a></article>
+<article class="topic-card featured"><div class="topic-kicker">PARTNER WITH US</div><h3>Referral &amp; Affiliate</h3><p>Explore currently available financial-product referral opportunities.</p><a class="btn secondary" href="/referral-affiliate">Explore Offers ↗</a></article>
+<article class="topic-card featured"><div class="topic-kicker">INVEST WITH CLARITY</div><h3>Mutual Funds</h3><p>Learn the basics of Mutual Funds, SIPs, risks and investing.</p><a class="btn secondary" href="/mutual-funds">Explore Funds ↗</a></article>
+<article class="topic-card"><div class="topic-kicker">HELP &amp; ANSWERS</div><h3> <span data-en="Frequently Asked Questions" data-hi="अक्सर पूछे जाने वाले प्रश्न">Frequently Asked Questions</span> </h3><p>Find quick answers about our education, offers and services.</p><a class="btn secondary" href="/faq">View FAQs ↗</a></article>
+<article class="topic-card"><div class="topic-kicker">CLEAR &amp; TRANSPARENT</div><h3>Terms &amp; Conditions</h3><p>Review important disclaimers and operating terms.</p><a class="btn secondary" href="/terms">View Terms ↗</a></article>
+<article class="topic-card"><div class="topic-kicker">OUR STORY</div><h3> <span data-en="About Alpha Federation" data-hi="Alpha Federation के बारे में">About Alpha Federation</span> </h3><p>Learn about Alpha Federation and what we aim to provide.</p><a class="btn secondary" href="/about">Our Story ↗</a></article>
+<article class="topic-card"><div class="topic-kicker">GET IN TOUCH</div><h3> <span data-en="Contact Alpha Federation" data-hi="Alpha Federation से संपर्क करें">Contact Alpha Federation</span> </h3><p>Connect with us for enquiries, offers or partnerships.</p><a class="btn secondary" href="/contact">Contact Us ↗</a></article>
 </div></div></section>
 </main>
 <footer><div class="container"><div class="footergrid">
