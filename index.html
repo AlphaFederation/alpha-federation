@@ -66,6 +66,24 @@ nav.open{display:flex}.menu{display:block}.hero{padding:75px 0 65px}h1{font-size
 .topic-card.featured{border-color:rgba(223,184,95,.45);background:linear-gradient(145deg,#11263b,#0a1726)}
 @media(max-width:900px){.topic-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.topics{padding:45px 0 55px}.topic-intro h2{font-size:30px}.topic-grid{grid-template-columns:1fr;gap:13px}.topic-card{min-height:165px;padding:20px}.hero{padding:68px 0 58px}}
+
+/* Premium homepage refinements */
+.topic-kicker{display:inline-flex;align-self:flex-start;margin-bottom:7px;color:var(--gold2);font-size:10px;font-weight:850;letter-spacing:1.5px}
+.topic-card{box-shadow:0 8px 24px rgba(0,0,0,.12);overflow:hidden}
+.topic-card h3{letter-spacing:-.35px}
+.topic-card .btn{transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.topic-card .btn:hover{border-color:var(--gold);background:rgba(223,184,95,.08);transform:translateY(-1px)}
+.topic-card:focus-within{outline:2px solid rgba(223,184,95,.7);outline-offset:3px}
+.trading-topic{background:radial-gradient(circle at 100% 0%,rgba(223,184,95,.10),transparent 48%),linear-gradient(145deg,#11263b,#0a1726)}
+.hero{position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:280px;height:280px;right:-100px;bottom:-150px;border:1px solid rgba(223,184,95,.16);border-radius:50%;box-shadow:0 0 0 35px rgba(223,184,95,.025),0 0 0 70px rgba(223,184,95,.02);pointer-events:none}
+.hero .container{position:relative;z-index:1}
+.btn{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.primary:hover{box-shadow:0 8px 22px rgba(223,184,95,.18)}
+nav a:focus-visible,.btn:focus-visible,.menu:focus-visible{outline:2px solid var(--gold2);outline-offset:4px;border-radius:5px}
+@media(max-width:600px){h1{font-size:clamp(39px,11vw,52px);letter-spacing:-1.7px}.hero p{max-width:38ch}.topic-card{box-shadow:0 6px 18px rgba(0,0,0,.14)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -99,6 +117,7 @@ nav.open{display:flex}.menu{display:block}.hero{padding:75px 0 65px}h1{font-size
 <div class="topic-grid">
 <article class="topic-card featured"><h3> <span data-en="Why Choose Alpha Federation" data-hi="Alpha Federation क्यों चुनें">Why Choose Alpha Federation</span> </h3><p>See what makes our approach simple, transparent and practical.</p><a class="btn secondary" href="/why-choose"> <span data-en="View Details →" data-hi="विवरण देखें →">View Details →</span> </a></article>
 <article class="topic-card"><h3> <span data-en="Financial Education" data-hi="वित्तीय शिक्षा">Financial Education</span> </h3><p>Learn markets, investing and personal finance in a simple format.</p><a class="btn secondary" href="/financial-education">View Details →</a></article>
+<article class="topic-card featured trading-topic"><div class="topic-kicker">PRACTICAL TRADING GUIDE</div><h3>Trading Instructions</h3><p>Understand trading rules, risk management, position sizing and disciplined decision-making step by step.</p><a class="btn secondary" href="/trading-instruction">Explore Guide →</a></article>
 <article class="topic-card"><h3>Services &amp; Resources</h3><p>Explore useful market-focused resources and information.</p><a class="btn secondary" href="/services-resources">View Details →</a></article>
 <article class="topic-card featured"><h3>Referral &amp; Affiliate</h3><p>Explore currently available financial-product referral opportunities.</p><a class="btn secondary" href="/referral-affiliate">View Details →</a></article>
 <article class="topic-card featured"><h3>Mutual Funds</h3><p>Learn the basics of Mutual Funds, SIPs, risks and investing.</p><a class="btn secondary" href="/mutual-funds">View Details →</a></article>
