@@ -1,403 +1,2045 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090a0c">
-  <meta name="description" content="Alpha Federation Trading Instructions: learn disciplined market analysis, risk management, trade planning and portfolio protection.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08111f">
 
-  <title>Trading Instructions | Alpha Federation</title>
+<meta name="description" content="Learn trading fundamentals, trade planning, risk management, position sizing and trading psychology with Alpha Federation.">
+<meta name="robots" content="index,follow">
 
-  <style>
-    :root {
-      --bg: #090a0c;
-      --panel: #111316;
-      --panel-2: #17191c;
-      --gold: #c9a45d;
-      --gold-light: #e5cb8b;
-      --text: #f5f0e5;
-      --muted: #aaa9a3;
-      --line: rgba(201, 164, 93, .23);
-      --max: 1160px;
+<title>Trading Instructions | Alpha Federation</title>
+
+<style>
+:root {
+  --bg: #08111f;
+  --surface: #101e31;
+  --surface2: #14253b;
+  --gold: #e7bf67;
+  --gold-light: #f6dda0;
+  --text: #f5f7fb;
+  --muted: #b4c0d1;
+  --border: rgba(255,255,255,.09);
+  --green: #7ae0ad;
+  --red: #ff9999;
+  --radius: 18px;
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at top right, #152944 0%, transparent 40%),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  width: min(var(--max-width), calc(100% - 40px));
+  margin: auto;
+}
+
+.gold {
+  color: var(--gold-light);
+}
+
+/* HEADER */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,17,31,.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  color: var(--gold-light);
+  font-weight: 900;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.brand-title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.3;
+}
+
+.brand-subtitle {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1.2px;
+  margin-top: 4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #d7dfeb;
+  font-size: 13px;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--gold-light);
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  min-height: 44px;
+  border: 1px solid var(--gold);
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #111c2c;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .2s, opacity .2s;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-outline {
+  color: var(--text);
+  background: transparent;
+  border-color: rgba(255,255,255,.2);
+}
+
+.menu-button {
+  display: none;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  padding: 78px 0 65px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid rgba(231,191,103,.3);
+  border-radius: 30px;
+  background: rgba(231,191,103,.07);
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(38px, 4.7vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -1.7px;
+  margin: 22px 0;
+}
+
+.hero-description {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.small-note {
+  color: #98a8bd;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.hero-card {
+  padding: 28px;
+  border: 1px solid rgba(231,191,103,.22);
+  border-radius: 23px;
+  background: linear-gradient(145deg, #14263d, #0d192a);
+  box-shadow: 0 22px 65px rgba(0,0,0,.22);
+}
+
+.hero-card h2 {
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+
+.checkpoint {
+  display: flex;
+  gap: 13px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.checkpoint:last-child {
+  border-bottom: 0;
+}
+
+.checkpoint-number {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(231,191,103,.13);
+  color: var(--gold-light);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.checkpoint strong {
+  display: block;
+  font-size: 14px;
+}
+
+.checkpoint p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* TRUST STRIP */
+
+.trust-strip {
+  border-block: 1px solid var(--border);
+  background: rgba(255,255,255,.018);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
+  padding: 22px 0;
+}
+
+.trust-item {
+  font-size: 12px;
+  font-weight: 700;
+  color: #dce4ef;
+  text-align: center;
+}
+
+/* GENERAL SECTIONS */
+
+section.content {
+  padding: 78px 0;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.kicker {
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: clamp(28px,3.4vw,42px);
+  line-height: 1.2;
+  letter-spacing: -.8px;
+  margin: 0 0 15px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 20px;
+}
+
+.card {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(150deg, #122239, #0c192a);
+  transition: transform .2s, border-color .2s;
+  min-width: 0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(231,191,103,.48);
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(231,191,103,.12);
+  color: var(--gold-light);
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 0 0 11px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.card ul {
+  color: var(--muted);
+  font-size: 13px;
+  padding-left: 19px;
+  margin: 13px 0 0;
+}
+
+.card li {
+  margin: 7px 0;
+}
+
+/* TWO COLUMN PANELS */
+
+.two-columns {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 24px;
+}
+
+.panel {
+  padding: 28px;
+  background: rgba(16,30,49,.8);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-width: 0;
+}
+
+.panel h3 {
+  font-size: 21px;
+  margin: 0 0 17px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  display: flex;
+  gap: 11px;
+  margin: 14px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tick {
+  color: var(--green);
+  font-weight: 900;
+}
+
+.warning {
+  margin-top: 20px;
+  padding: 17px;
+  border: 1px solid rgba(255,153,153,.25);
+  border-radius: 12px;
+  background: rgba(255,153,153,.06);
+  color: #f1c5c5;
+  font-size: 12px;
+}
+
+/* TABLE */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  background: rgba(16,30,49,.65);
+}
+
+th,td {
+  text-align: left;
+  padding: 15px 17px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+th {
+  color: var(--gold-light);
+  background: rgba(231,191,103,.06);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+}
+
+td {
+  color: var(--muted);
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+/* CALCULATOR */
+
+.calculator-section {
+  background: linear-gradient(180deg,transparent,rgba(18,37,59,.55),transparent);
+  border-block: 1px solid var(--border);
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,.9fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.calculator-box {
+  min-width: 0;
+  padding: 27px;
+  background: #0b1728;
+  border: 1px solid rgba(231,191,103,.22);
+  border-radius: 20px;
+}
+
+.calculator-box h3 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.calc-description {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0 0 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px;
+}
+
+.form-group {
+  min-width: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #e1e7f0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: #101e31;
+  color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: 2px solid rgba(231,191,103,.45);
+  border-color: var(--gold);
+}
+
+.form-group small {
+  display: block;
+  color: #92a1b6;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.calc-button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.result-highlight {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid rgba(231,191,103,.25);
+  border-radius: 14px;
+  background: rgba(231,191,103,.08);
+}
+
+.result-highlight span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.result-highlight strong {
+  display: block;
+  color: var(--gold-light);
+  font-size: clamp(27px,3vw,38px);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.result-row:last-child {
+  border-bottom: 0;
+}
+
+.result-row span {
+  color: var(--muted);
+}
+
+.result-row strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.calc-footnote {
+  color: #92a1b6;
+  font-size: 11px;
+  margin-top: 16px;
+}
+
+.error-message {
+  display: none;
+  color: var(--red);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* MISTAKES */
+
+.mistakes-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 15px;
+}
+
+.mistake {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,.02);
+}
+
+.mistake-number {
+  color: var(--gold-light);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.mistake h3 {
+  font-size: 14px;
+  margin: 0 0 6px;
+}
+
+.mistake p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+/* FAQ */
+
+.faq-item {
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: rgba(255,255,255,.02);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 17px 19px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  color: var(--gold-light);
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-answer {
+  padding: 0 19px 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* CTA */
+
+.cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 32px;
+  border: 1px solid rgba(231,191,103,.25);
+  border-radius: 21px;
+  background: linear-gradient(110deg,rgba(231,191,103,.11),#112239);
+}
+
+.cta h2 {
+  font-size: 29px;
+  margin-bottom: 9px;
+}
+
+.cta p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 35px 0;
+  border-top: 1px solid var(--border);
+  background: rgba(0,0,0,.12);
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  font-size: 12px;
+  color: #d4dce8;
+}
+
+.footer-links a:hover {
+  color: var(--gold-light);
+}
+
+.footer-copy {
+  color: #98a8bd;
+  font-size: 12px;
+  max-width: 680px;
+}
+
+.disclaimer {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  margin-top: 22px;
+  color: #91a0b4;
+  font-size: 11px;
+}
+
+.back-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  background: #14253b;
+  border: 1px solid rgba(231,191,103,.35);
+  border-radius: 12px;
+  color: var(--gold-light);
+  z-index: 50;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .hero-grid {
+    gap: 28px;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE NAVIGATION AND LAYOUT */
+
+@media (max-width: 780px) {
+  .menu-button {
+    display: block;
+    margin-left: auto;
+  }
+
+  .nav {
+    min-height: 70px;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 12px 22px 20px;
+    background: #091526;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 15px 35px rgba(0,0,0,.3);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 3px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .hero-grid,
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 48px 0;
+  }
+
+  .hero-grid {
+    gap: 30px;
+  }
+
+  section.content {
+    padding: 55px 0;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .footer-row {
+    flex-direction: column;
+  }
+
+  .cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 520px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 37px;
+    height: 37px;
+    font-size: 15px;
+  }
+
+  .brand-title {
+    font-size: 11px;
+    letter-spacing: .6px;
+  }
+
+  .brand-subtitle {
+    font-size: 9px;
+    letter-spacing: .6px;
+  }
+
+  .menu-button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 38px 0;
+  }
+
+  h1 {
+    font-size: clamp(34px,9.5vw,46px);
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons .button {
+    width: 100%;
+  }
+
+  .hero-card {
+    padding: 19px;
+  }
+
+  .trust-grid {
+    gap: 12px;
+    padding: 17px 0;
+  }
+
+  .trust-item {
+    font-size: 10px;
+    text-align: left;
+  }
+
+  section.content {
+    padding: 48px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    font-size: 29px;
+  }
+
+  .section-heading p {
+    font-size: 13px;
+  }
+
+  .grid-3,
+  .mistakes-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .card,
+  .panel {
+    padding: 19px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card p,
+  .card ul {
+    font-size: 12px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .calculator-box {
+    padding: 18px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 16px;
+  }
+
+  .result-highlight {
+    padding: 16px;
+  }
+
+  .result-highlight strong {
+    font-size: 29px;
+  }
+
+  .result-row {
+    font-size: 12px;
+  }
+
+  .result-row strong {
+    max-width: 55%;
+  }
+
+  .mistake {
+    padding: 16px;
+  }
+
+  .faq-item summary {
+    padding: 15px;
+    font-size: 13px;
+  }
+
+  .faq-answer {
+    padding: 0 15px 16px;
+    font-size: 12px;
+  }
+
+  .cta {
+    padding: 22px;
+  }
+
+  .cta h2 {
+    font-size: 25px;
+  }
+
+  .cta .button {
+    width: 100%;
+  }
+
+  .footer-links {
+    gap: 12px;
+  }
+
+  .disclaimer {
+    font-size: 10px;
+    line-height: 1.8;
+  }
+
+  .back-top {
+    width: 39px;
+    height: 39px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body id="top">
+
+<header class="header">
+  <div class="container nav">
+
+    <a class="brand" href="index.html" aria-label="Alpha Federation home">
+      <span class="brand-logo">AF</span>
+      <span>
+        <span class="brand-title">ALPHA FEDERATION</span>
+        <span class="brand-subtitle">Finance • Trading • Education</span>
+      </span>
+    </a>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-expanded="false"
+      aria-controls="navigation">
+      ☰ Menu
+    </button>
+
+    <nav class="nav-links" id="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="financial-education.html">Education</a>
+      <a href="#process">Trading Guide</a>
+      <a href="#risk">Risk Management</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+
+    <a class="button nav-cta" href="#process">Start Learning ↗</a>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <span class="eyebrow">Trading education • Beginner friendly</span>
+
+      <h1>
+        Trade with a plan.<br>
+        <span class="gold">Not with emotions.</span>
+      </h1>
+
+      <p class="hero-description">
+        Learn how to prepare for a trade, define entry and exit rules,
+        manage risk, calculate position size and review your decisions.
+        Build a structured process before putting capital at risk.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="button" href="#process">Explore the Guide ↓</a>
+        <a class="button button-outline" href="#calculator">Position Calculator</a>
+      </div>
+
+      <p class="small-note">
+        Educational content only. No guaranteed returns or profit promises.
+      </p>
+    </div>
+
+    <aside class="hero-card">
+      <h2>Your Pre-Trade Checklist</h2>
+
+      <div class="checkpoint">
+        <span class="checkpoint-number">01</span>
+        <div>
+          <strong>Define the setup</strong>
+          <p>Identify the conditions that must exist before entering.</p>
+        </div>
+      </div>
+
+      <div class="checkpoint">
+        <span class="checkpoint-number">02</span>
+        <div>
+          <strong>Set your invalidation level</strong>
+          <p>Know when the original trade idea is no longer valid.</p>
+        </div>
+      </div>
+
+      <div class="checkpoint">
+        <span class="checkpoint-number">03</span>
+        <div>
+          <strong>Calculate the risk</strong>
+          <p>Estimate quantity according to your risk budget.</p>
+        </div>
+      </div>
+
+      <div class="checkpoint">
+        <span class="checkpoint-number">04</span>
+        <div>
+          <strong>Review the result</strong>
+          <p>Measure discipline and execution, not just profit or loss.</p>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+
+<div class="trust-strip">
+  <div class="container trust-grid">
+    <div class="trust-item">◇ Process over prediction</div>
+    <div class="trust-item">◎ Risk before reward</div>
+    <div class="trust-item">▤ Record every decision</div>
+    <div class="trust-item">↗ Learn through review</div>
+  </div>
+</div>
+
+<!-- TRADING PROCESS -->
+
+<section class="content" id="process">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="kicker">01 / The Process</div>
+
+      <h2>
+        A structured trading workflow,
+        <span class="gold">step by step.</span>
+      </h2>
+
+      <p>
+        Trading involves more than pressing buy or sell. A consistent
+        workflow helps you make decisions using defined rules instead
+        of urgency or emotion. Practise with a simulator before
+        considering real money.
+      </p>
+    </div>
+
+    <div class="grid-3">
+
+      <article class="card">
+        <div class="card-icon">⌕</div>
+        <h3>1. Prepare the Market View</h3>
+        <p>
+          Identify the instrument, trend, important price levels,
+          current volatility and relevant scheduled news.
+        </p>
+        <ul>
+          <li>Use reliable market information.</li>
+          <li>Mark important levels beforehand.</li>
+          <li>Know when you should avoid trading.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⌁</div>
+        <h3>2. Define a Valid Setup</h3>
+        <p>
+          Write down the conditions required before considering
+          a trade. Your rules should be clear enough to review later.
+        </p>
+        <ul>
+          <li>Define the entry trigger.</li>
+          <li>Identify conditions that cancel the idea.</li>
+          <li>Avoid entering from fear of missing out.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">⊙</div>
+        <h3>3. Plan Entry and Exit</h3>
+        <p>
+          Identify the intended entry price, stop-loss or exit rule,
+          target logic and the maximum intended risk.
+        </p>
+        <ul>
+          <li>Define your exit before entering.</li>
+          <li>Account for fees and slippage.</li>
+          <li>Remember that stop orders cannot guarantee a fill price.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">▦</div>
+        <h3>4. Calculate Position Size</h3>
+        <p>
+          Position size connects account equity and planned risk
+          with the distance between entry and stop.
+        </p>
+        <ul>
+          <li>Choose the risk amount first.</li>
+          <li>Check the product's lot size.</li>
+          <li>Never size a trade based on excitement alone.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">◷</div>
+        <h3>5. Manage the Open Trade</h3>
+        <p>
+          Follow your written rules instead of reacting impulsively
+          to every price movement.
+        </p>
+        <ul>
+          <li>Respect your exit conditions.</li>
+          <li>Avoid uncontrolled averaging down.</li>
+          <li>Follow your daily loss limit.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✎</div>
+        <h3>6. Journal and Review</h3>
+        <p>
+          Record the reason for entry, risk, execution, outcome
+          and lessons after every trade.
+        </p>
+        <ul>
+          <li>Record trading costs.</li>
+          <li>Separate process quality from outcome.</li>
+          <li>Review a meaningful sample of trades.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- RISK MANAGEMENT -->
+
+<section class="content" id="risk">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="kicker">02 / Protect Your Capital</div>
+      <h2>Risk management is the foundation.</h2>
+      <p>
+        No trading method eliminates risk. Clear risk controls can
+        help you avoid exposing too much capital to a single decision.
+      </p>
+    </div>
+
+    <div class="two-columns">
+
+      <div class="panel">
+        <h3>Rules to Establish Before Trading</h3>
+
+        <ul class="list">
+          <li>
+            <span class="tick">✓</span>
+            <span>
+              <strong>Risk budget:</strong>
+              Choose an amount you can afford to lose. No percentage
+              is universally safe for every trader.
+            </span>
+          </li>
+
+          <li>
+            <span class="tick">✓</span>
+            <span>
+              <strong>Daily loss limit:</strong>
+              Decide in advance when you will stop trading for the day.
+            </span>
+          </li>
+
+          <li>
+            <span class="tick">✓</span>
+            <span>
+              <strong>Combined exposure:</strong>
+              Consider the risk across correlated positions.
+            </span>
+          </li>
+
+          <li>
+            <span class="tick">✓</span>
+            <span>
+              <strong>Trading costs:</strong>
+              Include applicable brokerage, taxes, spreads and slippage.
+            </span>
+          </li>
+
+          <li>
+            <span class="tick">✓</span>
+            <span>
+              <strong>Leverage:</strong>
+              Understand that leverage magnifies losses as well as gains.
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3>Understand Reward-to-Risk</h3>
+
+        <p class="section-heading" style="margin-bottom:20px;font-size:13px">
+          Reward-to-risk compares the planned reward with the planned
+          loss if the stop is reached. It does not predict the outcome.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Planned Risk</th>
+                <th>Potential Reward</th>
+                <th>Reward:Risk</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>₹500</td>
+                <td>₹500</td>
+                <td>1:1</td>
+              </tr>
+
+              <tr>
+                <td>₹500</td>
+                <td>₹1,000</td>
+                <td>2:1</td>
+              </tr>
+
+              <tr>
+                <td>₹500</td>
+                <td>₹1,500</td>
+                <td>3:1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="warning">
+          <strong>Important:</strong>
+          A higher reward-to-risk ratio does not automatically make
+          a strategy profitable. Win rate, costs, execution and market
+          conditions also matter.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- POSITION SIZING -->
+
+<section class="content" id="position-sizing">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="kicker">03 / Understand the Numbers</div>
+      <h2>Position sizing explained.</h2>
+      <p>
+        Position sizing estimates how many units fit your planned risk.
+        The calculator below uses a simplified spot-style model and
+        does not automatically account for every derivative contract,
+        lot size, leverage or margin requirement.
+      </p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>Meaning</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Account equity</td>
+            <td>Capital used for the calculation.</td>
+            <td>Sets the base for the risk amount.</td>
+          </tr>
+
+          <tr>
+            <td>Risk percentage</td>
+            <td>Share of equity allocated to planned loss on one trade.</td>
+            <td>Defines the intended risk budget.</td>
+          </tr>
+
+          <tr>
+            <td>Entry price</td>
+            <td>Price at which you plan to enter.</td>
+            <td>Used to estimate position value.</td>
+          </tr>
+
+          <tr>
+            <td>Stop-loss price</td>
+            <td>Level where the trade plan is invalidated or exited.</td>
+            <td>Determines the entry-to-stop distance.</td>
+          </tr>
+
+          <tr>
+            <td>Quantity</td>
+            <td>Approximate units that fit the risk budget.</td>
+            <td>Must also fit funds and product specifications.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+
+<section class="content calculator-section" id="calculator">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="kicker">04 / Interactive Tool</div>
+      <h2>Position size calculator.</h2>
+      <p>
+        Enter example values to understand the mathematics.
+        This calculator is educational and is not a recommendation
+        to place a trade.
+      </p>
+    </div>
+
+    <div class="calculator-grid">
+
+      <form class="calculator-box" id="calculatorForm">
+
+        <h3>Trade Inputs</h3>
+
+        <p class="calc-description">
+          For a long position, the stop must be below entry.
+          For a short position, the stop must be above entry.
+        </p>
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="equity">Account Equity (₹)</label>
+            <input id="equity" type="number" min="0.01" step="any"
+              value="50000" required>
+            <small>Total capital used in this example.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="risk">Risk per Trade (%)</label>
+            <input id="risk" type="number" min="0.01" max="100"
+              step="any" value="1" required>
+            <small>Illustrative input only.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="entry">Entry Price (₹)</label>
+            <input id="entry" type="number" min="0.000001"
+              step="any" value="250" required>
+          </div>
+
+          <div class="form-group">
+            <label for="stop">Stop-Loss Price (₹)</label>
+            <input id="stop" type="number" min="0.000001"
+              step="any" value="245" required>
+          </div>
+
+          <div class="form-group">
+            <label for="direction">Trade Direction</label>
+            <select id="direction">
+              <option value="long">Long / Buy</option>
+              <option value="short">Short / Sell</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cost">Estimated Cost Buffer (%)</label>
+            <input id="cost" type="number" min="0" max="100"
+              step="any" value="0.2" required>
+            <small>Optional allowance for costs and slippage.</small>
+          </div>
+
+        </div>
+
+        <button class="button calc-button" type="submit">
+          Calculate Position Size →
+        </button>
+
+        <p class="error-message" id="errorMessage" role="alert"></p>
+
+      </form>
+
+      <div class="calculator-box" aria-live="polite">
+
+        <h3>Your Estimate</h3>
+
+        <p class="calc-description">
+          Results are estimates based on the numbers you enter.
+        </p>
+
+        <div class="result-highlight">
+          <span>Estimated Quantity (Whole Units)</span>
+          <strong id="quantityResult">99 units</strong>
+        </div>
+
+        <div class="result-row">
+          <span>Planned Risk Budget</span>
+          <strong id="budgetResult">₹500.00</strong>
+        </div>
+
+        <div class="result-row">
+          <span>Risk Per Unit, Including Buffer</span>
+          <strong id="unitRiskResult">₹5.01</strong>
+        </div>
+
+        <div class="result-row">
+          <span>Estimated Position Value</span>
+          <strong id="valueResult">₹24,750.00</strong>
+        </div>
+
+        <div class="result-row">
+          <span>Estimated Loss at Stop</span>
+          <strong id="lossResult">₹495.99</strong>
+        </div>
+
+        <div class="result-row">
+          <span>Approx. Equity Used</span>
+          <strong id="equityUsedResult">49.5%</strong>
+        </div>
+
+        <p class="calc-footnote" id="calcNote">
+          This simplified estimate does not guarantee a maximum loss.
+          Real execution, gaps, costs, margin and product rules can
+          change the result.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRADING PSYCHOLOGY -->
+
+<section class="content" id="psychology">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="kicker">05 / Trading Discipline</div>
+      <h2>Common mistakes to recognise early.</h2>
+      <p>
+        Many avoidable errors begin with decisions made outside the plan.
+        Clear rules can help you pause before acting.
+      </p>
+    </div>
+
+    <div class="mistakes-grid">
+
+      <article class="mistake">
+        <span class="mistake-number">01</span>
+        <div>
+          <h3>Revenge Trading</h3>
+          <p>
+            Trying to recover a loss immediately. Take a break and
+            respect your trading limits instead.
+          </p>
+        </div>
+      </article>
+
+      <article class="mistake">
+        <span class="mistake-number">02</span>
+        <div>
+          <h3>Fear of Missing Out</h3>
+          <p>
+            Entering because the price has already moved.
+            Wait for your next valid setup.
+          </p>
+        </div>
+      </article>
+
+      <article class="mistake">
+        <span class="mistake-number">03</span>
+        <div>
+          <h3>Moving the Stop Impulsively</h3>
+          <p>
+            Changing your risk boundary to avoid accepting a loss
+            can expose you to much larger losses.
+          </p>
+        </div>
+      </article>
+
+      <article class="mistake">
+        <span class="mistake-number">04</span>
+        <div>
+          <h3>Overtrading</h3>
+          <p>
+            More trades do not necessarily mean more opportunity.
+            Focus on setups that meet your rules.
+          </p>
+        </div>
+      </article>
+
+      <article class="mistake">
+        <span class="mistake-number">05</span>
+        <div>
+          <h3>Ignoring Trading Costs</h3>
+          <p>
+            Brokerage, spreads, taxes and slippage can affect
+            your net result, especially with frequent trading.
+          </p>
+        </div>
+      </article>
+
+      <article class="mistake">
+        <span class="mistake-number">06</span>
+        <div>
+          <h3>Judging Too Quickly</h3>
+          <p>
+            A few wins or losses do not prove whether a strategy
+            works. Review a consistent sample.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRADE JOURNAL -->
+
+<section class="content" id="journal">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="kicker">06 / Continuous Improvement</div>
+      <h2>Build a simple trading journal.</h2>
+      <p>
+        Keep records so your reviews are based on evidence rather
+        than memory. A notebook or spreadsheet can work.
+      </p>
+    </div>
+
+    <div class="grid-3">
+
+      <article class="card">
+        <div class="card-icon">▧</div>
+        <h3>Before the Trade</h3>
+        <p>
+          Record the date, instrument, setup, entry trigger, stop,
+          target logic, planned risk and reason for entry.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">↔</div>
+        <h3>During the Trade</h3>
+        <p>
+          Record rule-based adjustments, execution issues, major
+          news and whether you followed the plan.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">✓</div>
+        <h3>After the Trade</h3>
+        <p>
+          Record the net result, costs, rule adherence, one lesson
+          and one improvement to test.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="content" id="faq">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="kicker">07 / Frequently Asked Questions</div>
+      <h2>Trading guide FAQs.</h2>
+      <p>
+        Understand the fundamentals, practise without risking capital
+        and seek qualified advice when needed.
+      </p>
+    </div>
+
+    <details class="faq-item">
+      <summary>Can beginners use this trading guide?</summary>
+      <div class="faq-answer">
+        Yes. It explains a structured workflow and basic position-sizing
+        concepts. It does not teach a guaranteed strategy or replace
+        supervised practice or professional advice.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does the calculator tell me which trade to take?</summary>
+      <div class="faq-answer">
+        No. It estimates position size using your inputs. It cannot
+        assess whether a setup is valid, predict prices or determine
+        whether a trade is suitable for your circumstances.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is risking 1% per trade always safe?</summary>
+      <div class="faq-answer">
+        No percentage is universally safe. Risk tolerance depends on
+        your financial circumstances, experience, strategy and market.
+        Gaps, slippage and leverage can cause losses beyond the
+        simplified estimate.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I use this calculator for futures, options or leveraged crypto?</summary>
+      <div class="faq-answer">
+        Do not rely on this simplified model for those products without
+        adapting it for contract multipliers, lot sizes, premiums,
+        funding, margin, liquidation mechanics and other product risks.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What should I do after consecutive losses?</summary>
+      <div class="faq-answer">
+        Follow your predefined daily or weekly stop rule. Pause,
+        review whether you followed your plan and avoid increasing
+        position size to recover losses.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I know whether a strategy works?</summary>
+      <div class="faq-answer">
+        Define the rules, test them consistently on suitable historical
+        data, include realistic costs and slippage, and validate them
+        through controlled forward testing. Past performance does not
+        guarantee future results.
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+
+<section class="content" style="padding-top:0">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <h2>Build knowledge before taking risk.</h2>
+        <p>
+          Explore more learning resources from Alpha Federation
+          and continue improving your financial literacy.
+        </p>
+      </div>
+
+      <a class="button" href="financial-education.html">
+        Explore Financial Education ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-row">
+
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand-logo">AF</span>
+          <span>
+            <span class="brand-title">ALPHA FEDERATION</span>
+            <span class="brand-subtitle">Finance • Trading • Education</span>
+          </span>
+        </a>
+
+        <p class="footer-copy">
+          Learn thoughtfully. Plan carefully. Understand the risks
+          before making financial decisions.
+        </p>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="financial-education.html">Education</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+
+    </div>
+
+    <div class="disclaimer">
+      <strong>Risk Disclaimer:</strong>
+      This page is provided for general educational and informational
+      purposes only. It is not investment advice, financial advice,
+      a recommendation, research or a solicitation to buy or sell any
+      security, derivative, cryptocurrency or other financial
+      instrument. Markets involve risk, including possible loss of
+      some or all capital. Leverage can increase losses. Examples and
+      calculator outputs are simplified estimates and may exclude fees,
+      taxes, spreads, slippage, contract specifications, margin and
+      other factors. Verify current product details and applicable
+      rules with official sources and your regulated intermediary.
+      Alpha Federation does not guarantee returns.
+    </div>
+
+    <p class="footer-copy">
+      © <span id="currentYear"></span> Alpha Federation. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
+<a class="back-top" href="#top" aria-label="Back to top">↑</a>
+
+<script>
+(function () {
+  "use strict";
+
+  /* Mobile navigation */
+  const menuButton = document.getElementById("menuButton");
+  const navigation = document.getElementById("navigation");
+
+  menuButton.addEventListener("click", function () {
+    const isOpen = navigation.classList.toggle("open");
+
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.textContent = isOpen ? "✕ Close" : "☰ Menu";
+  });
+
+  navigation.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navigation.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.textContent = "☰ Menu";
+    });
+  });
+
+  /* Current year */
+  document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+  /* Calculator */
+  const form = document.getElementById("calculatorForm");
+  const errorMessage = document.getElementById("errorMessage");
+
+  function formatINR(value) {
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(value);
+  }
+
+  function getNumber(id) {
+    return Number(document.getElementById(id).value);
+  }
+
+  function calculatePosition(event) {
+    if (event) {
+      event.preventDefault();
     }
 
-    * { box-sizing: border-box; }
+    const equity = getNumber("equity");
+    const riskPercent = getNumber("risk");
+    const entry = getNumber("entry");
+    const stop = getNumber("stop");
+    const costPercent = getNumber("cost");
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 95px;
+    const direction =
+      document.getElementById("direction").value;
+
+    let message = "";
+
+    if (
+      ![equity, riskPercent, entry, stop, costPercent]
+        .every(Number.isFinite)
+    ) {
+      message = "Please enter valid numbers in all fields.";
+    } else if (
+      equity <= 0 ||
+      entry <= 0 ||
+      stop <= 0
+    ) {
+      message =
+        "Account equity, entry and stop prices must be greater than zero.";
+    } else if (
+      riskPercent <= 0 ||
+      riskPercent > 100
+    ) {
+      message =
+        "Risk percentage must be greater than 0 and no more than 100.";
+    } else if (
+      costPercent < 0 ||
+      costPercent > 100
+    ) {
+      message =
+        "Cost buffer must be between 0 and 100%.";
+    } else if (
+      direction === "long" &&
+      stop >= entry
+    ) {
+      message =
+        "For a long trade, stop-loss must be below entry.";
+    } else if (
+      direction === "short" &&
+      stop <= entry
+    ) {
+      message =
+        "For a short trade, stop-loss must be above entry.";
     }
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+    if (message) {
+      errorMessage.textContent = message;
+      errorMessage.style.display = "block";
+      return;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
+    errorMessage.style.display = "none";
 
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin-inline: auto;
+    const riskBudget = equity * riskPercent / 100;
+
+    const priceDistance = Math.abs(entry - stop);
+
+    const riskPerUnit =
+      priceDistance * (1 + costPercent / 100);
+
+    const quantity = Math.max(
+      0,
+      Math.floor(riskBudget / riskPerUnit)
+    );
+
+    const positionValue = quantity * entry;
+    const estimatedLoss = quantity * riskPerUnit;
+    const equityUsed = positionValue / equity * 100;
+
+    document.getElementById("quantityResult").textContent =
+      quantity.toLocaleString("en-IN") +
+      (quantity === 1 ? " unit" : " units");
+
+    document.getElementById("budgetResult").textContent =
+      formatINR(riskBudget);
+
+    document.getElementById("unitRiskResult").textContent =
+      formatINR(riskPerUnit);
+
+    document.getElementById("valueResult").textContent =
+      formatINR(positionValue);
+
+    document.getElementById("lossResult").textContent =
+      formatINR(estimatedLoss);
+
+    document.getElementById("equityUsedResult").textContent =
+      equityUsed.toFixed(2) + "%";
+
+    const note = document.getElementById("calcNote");
+
+    if (positionValue > equity) {
+      note.textContent =
+        "The estimated position value exceeds account equity. " +
+        "This calculation does not include margin requirements or " +
+        "leverage. Do not assume the position is affordable.";
+    } else {
+      note.textContent =
+        "Simplified estimate only. Actual fills, fees, gaps, " +
+        "contract specifications, margin and taxes can change " +
+        "the result. Planned risk is not a guaranteed maximum loss.";
     }
+  }
 
-    .gold { color: var(--gold-light); }
+  form.addEventListener("submit", calculatePosition);
 
-    .eyebrow {
-      color: var(--gold-light);
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .19em;
-      text-transform: uppercase;
-    }
+  /* Show correct example output when the page first opens */
+  calculatePosition();
+})();
+</script>
 
-    h1, h2, h3, p { margin-top: 0; }
-
-    h1, h2, h3 {
-      line-height: 1.2;
-      letter-spacing: -.025em;
-    }
-
-    h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
-    h2 { font-size: clamp(1.8rem, 3.5vw, 2.7rem); }
-    h3 { font-size: 1.12rem; }
-
-    .muted { color: var(--muted); }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(9, 10, 12, .94);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-
-    .brand-mark {
-      width: 43px;
-      height: 43px;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      border-radius: 10px;
-      color: #111;
-      background: linear-gradient(145deg, #ebd69f, #b68b42);
-      font-size: 1.35rem;
-      font-weight: 900;
-    }
-
-    .brand-name {
-      color: var(--gold-light);
-      font-size: .96rem;
-      font-weight: 800;
-      letter-spacing: .07em;
-    }
-
-    .brand-sub {
-      display: block;
-      color: var(--muted);
-      font-size: .63rem;
-      letter-spacing: .18em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      font-size: .85rem;
-      color: #d2cfc7;
-    }
-
-    .nav-links a:hover { color: var(--gold-light); }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 46px;
-      padding: 11px 19px;
-      border: 1px solid var(--gold);
-      border-radius: 7px;
-      font-size: .88rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform .2s, background .2s, border-color .2s;
-    }
-
-    .button:hover { transform: translateY(-2px); }
-
-    .button-primary {
-      color: #17130c;
-      background: linear-gradient(135deg, #e4ca8a, #bb9148);
-      border-color: transparent;
-    }
-
-    .button-outline {
-      color: var(--gold-light);
-      background: transparent;
-    }
-
-    .button-outline:hover { background: rgba(201,164,93,.09); }
-
-    .hero {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      border-bottom: 1px solid var(--line);
-      background:
-        radial-gradient(ellipse at 82% 15%, rgba(173,126,43,.15), transparent 38%),
-        linear-gradient(180deg, #0b0c0e, #090a0c);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 52px;
-      padding-top: 75px;
-      padding-bottom: 75px;
-    }
-
-    .hero h1 { margin: 18px 0; }
-    .hero h1 span { color: var(--gold-light); }
-
-    .hero-copy {
-      max-width: 570px;
-      color: #b9b8b1;
-      font-size: 1.05rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .hero-note {
-      margin-top: 24px;
-      color: #898980;
-      font-size: .79rem;
-    }
-
-    .hero-image {
-      position: relative;
-      min-height: 390px;
-      overflow: hidden;
-      border: 1px solid rgba(201,164,93,.35);
-      border-radius: 14px;
-      background:
-        linear-gradient(0deg, rgba(8,9,11,.45), transparent 55%),
-        url("assets/trading-hero.jpg") center / cover no-repeat,
-        #15171a;
-      box-shadow: 0 25px 80px rgba(0,0,0,.35);
-    }
-
-    .image-label {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      left: 18px;
-      padding: 14px 16px;
-      border: 1px solid rgba(201,164,93,.28);
-      border-radius: 8px;
-      background: rgba(9,10,12,.84);
-      backdrop-filter: blur(8px);
-    }
-
-    .image-label strong {
-      display: block;
-      color: var(--gold-light);
-      font-size: .86rem;
-    }
-
-    .image-label span {
-      color: #c1beb5;
-      font-size: .77rem;
-    }
-
-    .section { padding: 82px 0; }
-
-    .section-heading {
-      max-width: 720px;
-      margin-bottom: 35px;
-    }
-
-    .section-heading h2 { margin: 10px 0 15px; }
-
-    .section-heading p {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 17px;
-    }
-
-    .card {
-      padding: 25px;
-      border: 1px solid #292a2c;
-      border-radius: 11px;
-      background: linear-gradient(145deg, #141619, #0e1012);
-      transition: border-color .2s, transform .2s;
-    }
-
-    .card:hover {
-      border-color: rgba(201,164,93,.6);
-      transform: translateY(-3px);
-    }
-
-    .card-number {
-      color: var(--gold);
-      font-size: .76rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-    }
-
-    .card h3 { margin: 15px 0 10px; }
-
-    .card p {
-      color: var(--muted);
-      font-size: .9rem;
-      margin-bottom: 0;
-    }
-
-    .guide-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
-      align-items: start;
-      gap: 35px;
-    }
-
-    .guide-list {
-      display: grid;
-      gap: 13px;
-    }
-
-    details {
-      border: 1px solid #2c2b27;
-      border-radius: 9px;
-      background: var(--panel);
-    }
-
-    details[open] { border-color: rgba(201,164,93,.55); }
-
-    summary {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 19px;
-      cursor: pointer;
-      list-style: none;
-      font-weight: 700;
-    }
-
-    summary::-webkit-details-marker { display: none; }
-
-    summary::after {
-      content: "+";
-      margin-left: auto;
-      color: var(--gold-light);
-      font-size: 1.35rem;
-    }
-
-    details[open] summary::after { content: "−"; }
-
-    .summary-number {
-      color: var(--gold-light);
-      font-size: .78rem;
-      letter-spacing: .08em;
-    }
-
-    .detail-content {
-      padding: 0 20px 20px;
-      color: var(--muted);
-      font-size: .91rem;
-    }
-
-    .detail-content li { margin: 9px 0; }
-    .detail-content strong { color: #e7dfce; }
-
-    .side-panel {
-      position: sticky;
-      top: 100px;
-      padding: 27px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background:
-        radial-gradient(ellipse at top right, rgba(201,164,93,.09), transparent 60%),
-        #111214;
-    }
-
-    .side-panel h3 { margin-bottom: 12px; }
-
-    .side-panel p, .side-panel li {
-      color: var(--muted);
-      font-size: .88rem;
-    }
-
-    .side-panel ul { padding-left: 20px; }
-
-    .rule {
-      height: 1px;
-      margin: 22px 0;
-      background: var(--line);
-    }
-
-    .calculator-section {
-      border-top: 1px solid #28251e;
-      border-bottom: 1px solid #28251e;
-      background:
-        radial-gradient(ellipse at 85% 10%, rgba(201,164,93,.07), transparent 38%),
-        #0d0e10;
-    }
-
-    .calculator {
-      max-width: 850px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      padding: 28px;
-      border: 1px solid #34302a;
-      border-radius: 13px;
-      background: #121416;
-    }
-
-    .field { display: grid; gap: 7px; }
-
-    .field label {
-      color: #ded8ca;
-      font-size: .84rem;
-      font-weight: 600;
-    }
-
-    .field input {
-      width: 100%;
-      min-height: 47px;
-      padding: 11px 13px;
-      color
+</body>
+</html>
