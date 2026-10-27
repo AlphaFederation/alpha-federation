@@ -1,301 +1,403 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trading Instruction | Alpha Federation</title>
+  <meta name="theme-color" content="#090a0c">
+  <meta name="description" content="Alpha Federation Trading Instructions: learn disciplined market analysis, risk management, trade planning and portfolio protection.">
+
+  <title>Trading Instructions | Alpha Federation</title>
+
   <style>
+    :root {
+      --bg: #090a0c;
+      --panel: #111316;
+      --panel-2: #17191c;
+      --gold: #c9a45d;
+      --gold-light: #e5cb8b;
+      --text: #f5f0e5;
+      --muted: #aaa9a3;
+      --line: rgba(201, 164, 93, .23);
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
     body {
-      background-color: #0b0f19;
-      color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       margin: 0;
-      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
-    header {
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .gold { color: var(--gold-light); }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+      letter-spacing: -.025em;
+    }
+
+    h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.7rem); }
+    h3 { font-size: 1.12rem; }
+
+    .muted { color: var(--muted); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(9, 10, 12, .94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 76px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      flex-wrap: wrap;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 24px;
     }
-    .logo-container {
+
+    .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      text-decoration: none;
-      color: #ffffff;
+      min-width: 0;
     }
-    .logo-box {
-      background: #d4af37;
-      color: #0b0f19;
-      font-weight: bold;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 14px;
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 10px;
+      color: #111;
+      background: linear-gradient(145deg, #ebd69f, #b68b42);
+      font-size: 1.35rem;
+      font-weight: 900;
     }
-    .logo-text div:first-child {
-      font-weight: bold;
-      font-size: 16px;
+
+    .brand-name {
+      color: var(--gold-light);
+      font-size: .96rem;
+      font-weight: 800;
+      letter-spacing: .07em;
     }
-    .logo-text div:last-child {
-      font-size: 11px;
-      color: #9ca3af;
+
+    .brand-sub {
+      display: block;
+      color: var(--muted);
+      font-size: .63rem;
+      letter-spacing: .18em;
     }
-    .nav-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+
     .nav-links {
       display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
       align-items: center;
+      gap: 25px;
+      font-size: .85rem;
+      color: #d2cfc7;
     }
-    .nav-links a {
-      color: #a0aec0;
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: #ffffff;
-    }
-    /* Language Selector Matching Other Pages */
-    .language-selector {
-      background: rgba(17, 24, 39, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #d4af37;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 13px;
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 11px 19px;
+      border: 1px solid var(--gold);
+      border-radius: 7px;
+      font-size: .88rem;
+      font-weight: 700;
       cursor: pointer;
-      outline: none;
-      transition: border-color 0.2s;
+      transition: transform .2s, background .2s, border-color .2s;
     }
-    .language-selector:hover {
-      border-color: rgba(212, 175, 55, 0.6);
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button-primary {
+      color: #17130c;
+      background: linear-gradient(135deg, #e4ca8a, #bb9148);
+      border-color: transparent;
     }
-    .language-selector option {
-      background: #0b0f19;
-      color: #ffffff;
+
+    .button-outline {
+      color: var(--gold-light);
+      background: transparent;
     }
-    .container {
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 0 20px;
+
+    .button-outline:hover { background: rgba(201,164,93,.09); }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse at 82% 15%, rgba(173,126,43,.15), transparent 38%),
+        linear-gradient(180deg, #0b0c0e, #090a0c);
     }
-    .page-header {
-      text-align: center;
-      margin-bottom: 50px;
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 52px;
+      padding-top: 75px;
+      padding-bottom: 75px;
     }
-    .page-header span {
-      color: #d4af37;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      font-weight: 600;
+
+    .hero h1 { margin: 18px 0; }
+    .hero h1 span { color: var(--gold-light); }
+
+    .hero-copy {
+      max-width: 570px;
+      color: #b9b8b1;
+      font-size: 1.05rem;
     }
-    .page-header h1 {
-      font-size: 36px;
-      margin: 15px 0 10px 0;
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
     }
-    .page-header p {
-      color: #9ca3af;
-      font-size: 15px;
+
+    .hero-note {
+      margin-top: 24px;
+      color: #898980;
+      font-size: .79rem;
     }
+
+    .hero-image {
+      position: relative;
+      min-height: 390px;
+      overflow: hidden;
+      border: 1px solid rgba(201,164,93,.35);
+      border-radius: 14px;
+      background:
+        linear-gradient(0deg, rgba(8,9,11,.45), transparent 55%),
+        url("assets/trading-hero.jpg") center / cover no-repeat,
+        #15171a;
+      box-shadow: 0 25px 80px rgba(0,0,0,.35);
+    }
+
+    .image-label {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      padding: 14px 16px;
+      border: 1px solid rgba(201,164,93,.28);
+      border-radius: 8px;
+      background: rgba(9,10,12,.84);
+      backdrop-filter: blur(8px);
+    }
+
+    .image-label strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: .86rem;
+    }
+
+    .image-label span {
+      color: #c1beb5;
+      font-size: .77rem;
+    }
+
+    .section { padding: 82px 0; }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 { margin: 10px 0 15px; }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
     .card {
-      background: rgba(17, 24, 39, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 35px;
-      margin-bottom: 24px;
-      transition: border-color 0.2s;
+      padding: 25px;
+      border: 1px solid #292a2c;
+      border-radius: 11px;
+      background: linear-gradient(145deg, #141619, #0e1012);
+      transition: border-color .2s, transform .2s;
     }
+
     .card:hover {
-      border-color: rgba(212, 175, 55, 0.4);
+      border-color: rgba(201,164,93,.6);
+      transform: translateY(-3px);
     }
-    .card h2 {
-      color: #ffffff;
-      font-size: 22px;
-      margin-top: 0;
-      margin-bottom: 15px;
+
+    .card-number {
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .card h3 { margin: 15px 0 10px; }
+
+    .card p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 0;
+    }
+
+    .guide-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+      align-items: start;
+      gap: 35px;
+    }
+
+    .guide-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    details {
+      border: 1px solid #2c2b27;
+      border-radius: 9px;
+      background: var(--panel);
+    }
+
+    details[open] { border-color: rgba(201,164,93,.55); }
+
+    summary {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
+      padding: 19px;
+      cursor: pointer;
+      list-style: none;
+      font-weight: 700;
     }
-    .card h2 span {
-      color: #d4af37;
-      font-size: 18px;
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      margin-left: auto;
+      color: var(--gold-light);
+      font-size: 1.35rem;
     }
-    .card p, .card li {
-      color: #9ca3af;
-      font-size: 15px;
-      line-height: 1.6;
+
+    details[open] summary::after { content: "−"; }
+
+    .summary-number {
+      color: var(--gold-light);
+      font-size: .78rem;
+      letter-spacing: .08em;
     }
-    .card ul {
-      margin: 15px 0 0 20px;
-      padding: 0;
+
+    .detail-content {
+      padding: 0 20px 20px;
+      color: var(--muted);
+      font-size: .91rem;
     }
-    .card li {
-      margin-bottom: 10px;
+
+    .detail-content li { margin: 9px 0; }
+    .detail-content strong { color: #e7dfce; }
+
+    .side-panel {
+      position: sticky;
+      top: 100px;
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background:
+        radial-gradient(ellipse at top right, rgba(201,164,93,.09), transparent 60%),
+        #111214;
     }
-    .note-box {
-      background: rgba(212, 175, 55, 0.05);
-      border-left: 3px solid #d4af37;
-      padding: 15px 20px;
-      margin-top: 20px;
-      border-radius: 0 8px 8px 0;
+
+    .side-panel h3 { margin-bottom: 12px; }
+
+    .side-panel p, .side-panel li {
+      color: var(--muted);
+      font-size: .88rem;
     }
-    .note-box p {
-      margin: 0;
-      color: #d4af37;
-      font-size: 14px;
-      font-weight: 500;
+
+    .side-panel ul { padding-left: 20px; }
+
+    .rule {
+      height: 1px;
+      margin: 22px 0;
+      background: var(--line);
     }
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin-top: 80px;
-      padding: 40px 20px;
-      text-align: center;
-      color: #9ca3af;
-      font-size: 14px;
+
+    .calculator-section {
+      border-top: 1px solid #28251e;
+      border-bottom: 1px solid #28251e;
+      background:
+        radial-gradient(ellipse at 85% 10%, rgba(201,164,93,.07), transparent 38%),
+        #0d0e10;
     }
-    footer a {
-      color: #d4af37;
-      text-decoration: none;
-      margin: 0 10px;
+
+    .calculator {
+      max-width: 850px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      padding: 28px;
+      border: 1px solid #34302a;
+      border-radius: 13px;
+      background: #121416;
     }
-  </style>
-</head>
-<body>
 
-  <!-- Header Navigation with Language Selector -->
-  <header>
-    <a href="index.html" class="logo-container">
-      <div class="logo-box">AF</div>
-      <div class="logo-text">
-        <div>Alpha Federation</div>
-        <div>Finance • Trading • Education • Affiliate</div>
-      </div>
-    </a>
-    <div class="nav-wrapper">
-      <nav class="nav-links">
-        <a href="index.html">Explore</a>
-        <a href="education.html">Education</a>
-        <a href="services.html">Services</a>
-        <a href="affiliate.html">Affiliate</a>
-        <a href="mutual-funds.html">Mutual Funds</a>
-        <a href="faq.html">FAQ</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="trading-instruction.html" style="color: #d4af37; font-weight: 600;">Trading Instruction</a>
-      </nav>
-      <!-- Language Selector Dropdown -->
-      <select class="language-selector" aria-label="Select Language">
-        <option value="en" selected>English</option>
-        <option value="es">Español</option>
-        <option value="fr">Français</option>
-        <option value="de">Deutsch</option>
-        <option value="hi">हिन्दी</option>
-      </select>
-    </div>
-  </header>
+    .field { display: grid; gap: 7px; }
 
-  <!-- Main Content Container -->
-  <div class="container">
-    <div class="page-header">
-      <span>Guidelines & Execution</span>
-      <h1>Comprehensive Trading Instructions & Notes</h1>
-      <p>Extended operational rules, risk boundaries, psychological checklists, and multi-timeframe methodologies for absolute market discipline.</p>
-    </div>
+    .field label {
+      color: #ded8ca;
+      font-size: .84rem;
+      font-weight: 600;
+    }
 
-    <!-- Instruction Card 1 -->
-    <div class="card">
-      <h2><span>01.</span> Risk Management & Capital Preservation</h2>
-      <p>Never enter any trade without defining your risk parameters beforehand. Capital preservation is the absolute foundation for long-term market survival and compounding consistency.</p>
-      <ul>
-        <li><strong>Position Sizing Calculations:</strong> Always compute position size precisely based on account equity and stop distance.</li>
-        <li><strong>Risk Cap Threshold:</strong> Never risk more than 1% to 2% of total active capital on any individual trade setup.</li>
-        <li><strong>Immediate Stop-Loss Execution:</strong> Place stop-losses physically on the exchange immediately upon order execution.</li>
-      </ul>
-      <div class="note-box">
-        <p><strong>Detailed Note:</strong> Ignoring stop-losses during high-impact news releases or flash crashes leads directly to devastating account drawdowns. Treat your capital like a business inventory.</p>
-      </div>
-    </div>
-
-    <!-- Instruction Card 2 -->
-    <div class="card">
-      <h2><span>02.</span> Market Analysis, Confluence & Timing</h2>
-      <p>Patience is paramount. Wait exclusively for high-probability setups aligning with your macro bias rather than trading out of boredom or FOMO.</p>
-      <ul>
-        <li><strong>Multi-Timeframe Structure:</strong> Map higher timeframes (Daily/4H) first before looking for triggers on lower charts (15m/5m).</li>
-        <li><strong>Liquidity & Support Zones:</strong> Target entries near institutional order blocks, liquidity pools, and proven historical support/resistance levels.</li>
-        <li><strong>News Blackout Windows:</strong> Avoid opening fresh intraday positions 15 minutes before or after high-impact economic data releases.</li>
-      </ul>
-      <div class="note-box">
-        <p><strong>Detailed Note:</strong> Missing a move is infinitely superior to taking a forced loss. Protect mental energy by staying flat during choppy consolidation ranges.</p>
-      </div>
-    </div>
-
-    <!-- Instruction Card 3 -->
-    <div class="card">
-      <h2><span>03.</span> Psychological Discipline & Execution</h2>
-      <p>Execution must be strictly mechanical, detached from emotional highs and lows. Adhere rigorously to your pre-market and post-market routines.</p>
-      <ul>
-        <li><strong>Comprehensive Trade Journaling:</strong> Document every entry, exit price, psychological state, setup grade, and screenshot.</li>
-        <li><strong>Accepting Losing Outcomes:</strong> Treat losses as a normal, budgeted cost of operating a trading business.</li>
-        <li><strong>Hard Daily Stop Limits:</strong> Step away from the screens immediately upon hitting your maximum daily loss threshold.</li>
-      </ul>
-      <div class="note-box">
-        <p><strong>Detailed Note:</strong> Revenge trading after a loss is the primary catalyst for total account liquidation. Respect your daily circuit breakers and step away.</p>
-      </div>
-    </div>
-
-    <!-- Instruction Card 4 -->
-    <div class="card">
-      <h2><span>04.</span> Trade Management & Profit Harvesting</h2>
-      <p>Managing an open position requires as much precision and focus as the initial entry strategy.</p>
-      <ul>
-        <li><strong>Scaling Out:</strong> Take partial profits at predetermined risk-to-reward milestones (e.g., 1:2 or 1:3 targets).</li>
-        <li><strong>Breakeven Stops:</strong> Move stop-loss to breakeven only after price cleanly breaks key structural resistance.</li>
-        <li><strong>Trailing Stop Discipline:</strong> Use structural market swings rather than arbitrary time intervals to trail open profit.</li>
-      </ul>
-      <div class="note-box">
-        <p><strong>Detailed Note:</strong> Letting a winning trade turn into a loser due to greed destroys long-term statistical expectancy. Secure partial profits systematically.</p>
-      </div>
-    </div>
-
-    <!-- Instruction Card 5 -->
-    <div class="card">
-      <h2><span>05.</span> Portfolio Diversification & Asset Allocation</h2>
-      <p>Avoid over-concentrating risk across heavily correlated assets or single market sectors.</p>
-      <ul>
-        <li><strong>Sector Spread:</strong> Distribute capital across non-correlated instruments or asset classes to mitigate systemic shock.</li>
-        <li><strong>Leverage Restrictions:</strong> Restrict maximum portfolio leverage to safe, manageable bounds depending on market volatility.</li>
-        <li><strong>Cash Reserve Buffer:</strong> Maintain a healthy cash allocation to capitalize on unexpected major market discounts.</li>
-      </ul>
-      <div class="note-box">
-        <p><strong>Detailed Note:</strong> Over-leveraging correlated pairs multiplies hidden exposure and can wipe out accounts simultaneously during black swan events.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>Educational information only. Not financial advice.</p>
-    <p style="margin-top: 15px;">
-      <a href="index.html">Home</a> | 
-      <a href="education.html">Education</a> | 
-      <a href="contact.html">Contact</a>
-    </p>
-    <p style="margin-top: 15px; font-size: 12px; color: #6b7280;">© 2026 Alpha Federation. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+    .field input {
+      width: 100%;
+      min-height: 47px;
+      padding: 11px 13px;
+      color
