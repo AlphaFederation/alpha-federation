@@ -18,6 +18,8 @@
       align-items: center;
       padding: 20px 40px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
+      gap: 15px;
     }
     .logo-container {
       display: flex;
@@ -42,10 +44,17 @@
       font-size: 11px;
       color: #9ca3af;
     }
-    .nav-links {
+    .nav-wrapper {
       display: flex;
+      align-items: center;
       gap: 20px;
       flex-wrap: wrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
     }
     .nav-links a {
       color: #a0aec0;
@@ -54,6 +63,25 @@
       transition: color 0.2s;
     }
     .nav-links a:hover {
+      color: #ffffff;
+    }
+    /* Language Selector Matching Other Pages */
+    .language-selector {
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #d4af37;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .language-selector:hover {
+      border-color: rgba(212, 175, 55, 0.6);
+    }
+    .language-selector option {
+      background: #0b0f19;
       color: #ffffff;
     }
     .container {
@@ -146,7 +174,7 @@
 </head>
 <body>
 
-  <!-- Header Navigation -->
+  <!-- Header Navigation with Language Selector -->
   <header>
     <a href="index.html" class="logo-container">
       <div class="logo-box">AF</div>
@@ -155,66 +183,104 @@
         <div>Finance • Trading • Education • Affiliate</div>
       </div>
     </a>
-    <nav class="nav-links">
-      <a href="index.html">Explore</a>
-      <a href="education.html">Education</a>
-      <a href="services.html">Services</a>
-      <a href="affiliate.html">Affiliate</a>
-      <a href="mutual-funds.html">Mutual Funds</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="trading-instruction.html" style="color: #d4af37; font-weight: 600;">Trading Instruction</a>
-    </nav>
+    <div class="nav-wrapper">
+      <nav class="nav-links">
+        <a href="index.html">Explore</a>
+        <a href="education.html">Education</a>
+        <a href="services.html">Services</a>
+        <a href="affiliate.html">Affiliate</a>
+        <a href="mutual-funds.html">Mutual Funds</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="trading-instruction.html" style="color: #d4af37; font-weight: 600;">Trading Instruction</a>
+      </nav>
+      <!-- Language Selector Dropdown -->
+      <select class="language-selector" aria-label="Select Language">
+        <option value="en" selected>English</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="hi">हिन्दी</option>
+      </select>
+    </div>
   </header>
 
   <!-- Main Content Container -->
   <div class="container">
     <div class="page-header">
       <span>Guidelines & Execution</span>
-      <h1>Trading Instructions & Notes</h1>
-      <p>Comprehensive operational guidelines, risk boundaries, and execution methodologies for market participation.</p>
+      <h1>Comprehensive Trading Instructions & Notes</h1>
+      <p>Extended operational rules, risk boundaries, psychological checklists, and multi-timeframe methodologies for absolute market discipline.</p>
     </div>
 
     <!-- Instruction Card 1 -->
     <div class="card">
       <h2><span>01.</span> Risk Management & Capital Preservation</h2>
-      <p>Never enter any trade without defining your risk parameters beforehand. Capital preservation is the absolute priority for long-term survival, stability, and consistency in financial markets.</p>
+      <p>Never enter any trade without defining your risk parameters beforehand. Capital preservation is the absolute foundation for long-term market survival and compounding consistency.</p>
       <ul>
-        <li><strong>Position Sizing:</strong> Always calculate your exact position size relative to your total account portfolio value to cushion against unexpected drawdowns.</li>
-        <li><strong>Risk Percentage:</strong> Never risk more than 1% to 2% of your overall trading capital on a single setup or transaction.</li>
-        <li><strong>Stop-Loss Protocol:</strong> Always use predefined stop-loss orders immediately upon entry to completely eliminate emotional decision-making when the market moves against you.</li>
+        <li><strong>Position Sizing Calculations:</strong> Always compute position size precisely based on account equity and stop distance.</li>
+        <li><strong>Risk Cap Threshold:</strong> Never risk more than 1% to 2% of total active capital on any individual trade setup.</li>
+        <li><strong>Immediate Stop-Loss Execution:</strong> Place stop-losses physically on the exchange immediately upon order execution.</li>
       </ul>
       <div class="note-box">
-        <p><strong>Detailed Note:</strong> Accounts that fail to maintain rigid stop-loss practices face structural failure during high-volatility sessions. Treat capital as your inventory.</p>
+        <p><strong>Detailed Note:</strong> Ignoring stop-losses during high-impact news releases or flash crashes leads directly to devastating account drawdowns. Treat your capital like a business inventory.</p>
       </div>
     </div>
 
     <!-- Instruction Card 2 -->
     <div class="card">
-      <h2><span>02.</span> Market Analysis, Setup & Timing</h2>
-      <p>Patience is paramount. Wait exclusively for high-probability setups that align directly with your overarching market bias rather than forcing trades out of boredom, frustration, or FOMO.</p>
+      <h2><span>02.</span> Market Analysis, Confluence & Timing</h2>
+      <p>Patience is paramount. Wait exclusively for high-probability setups aligning with your macro bias rather than trading out of boredom or FOMO.</p>
       <ul>
-        <li><strong>Multi-Timeframe Confluence:</strong> Perform thorough macro-to-micro timeframe analysis before committing capital to any position.</li>
-        <li><strong>Structural Zones:</strong> Pinpoint critical historical support, resistance, liquidity pools, and trend structures before executing trades.</li>
-        <li><strong>High-Impact Events:</strong> Avoid opening fresh intraday positions during major scheduled news releases or central bank rate announcements unless managing existing swings.</li>
+        <li><strong>Multi-Timeframe Structure:</strong> Map higher timeframes (Daily/4H) first before looking for triggers on lower charts (15m/5m).</li>
+        <li><strong>Liquidity & Support Zones:</strong> Target entries near institutional order blocks, liquidity pools, and proven historical support/resistance levels.</li>
+        <li><strong>News Blackout Windows:</strong> Avoid opening fresh intraday positions 15 minutes before or after high-impact economic data releases.</li>
       </ul>
       <div class="note-box">
-        <p><strong>Detailed Note:</strong> Missing a move is infinitely better than entering a bad setup. Protect your psychological bandwidth by staying sidelined during choppy consolidation periods.</p>
+        <p><strong>Detailed Note:</strong> Missing a move is infinitely superior to taking a forced loss. Protect mental energy by staying flat during choppy consolidation ranges.</p>
       </div>
     </div>
 
     <!-- Instruction Card 3 -->
     <div class="card">
       <h2><span>03.</span> Psychological Discipline & Execution</h2>
-      <p>Execution must be completely mechanical and detached from emotional highs and lows. Adhere strictly to your pre-market checklist without deviation or improvised exceptions.</p>
+      <p>Execution must be strictly mechanical, detached from emotional highs and lows. Adhere rigorously to your pre-market and post-market routines.</p>
       <ul>
-        <li><strong>Comprehensive Journaling:</strong> Log every single trade with its precise entry, exit, mathematical reasoning, setup grade, and your emotional state.</li>
-        <li><strong>Accepting Loss:</strong> View consecutive or single losses as a normal, budgeted cost of doing business in volatile financial ecosystems.</li>
-        <li><strong>Daily Circuit Breakers:</strong> Immediately step away from the trading screens the moment you hit your maximum daily loss threshold or target profit goal.</li>
+        <li><strong>Comprehensive Trade Journaling:</strong> Document every entry, exit price, psychological state, setup grade, and screenshot.</li>
+        <li><strong>Accepting Losing Outcomes:</strong> Treat losses as a normal, budgeted cost of operating a trading business.</li>
+        <li><strong>Hard Daily Stop Limits:</strong> Step away from the screens immediately upon hitting your maximum daily loss threshold.</li>
       </ul>
       <div class="note-box">
-        <p><strong>Detailed Note:</strong> Revenge trading after a loss is the primary cause of account liquidation. Honor your daily limits and walk away.</p>
+        <p><strong>Detailed Note:</strong> Revenge trading after a loss is the primary catalyst for total account liquidation. Respect your daily circuit breakers and step away.</p>
+      </div>
+    </div>
+
+    <!-- Instruction Card 4 -->
+    <div class="card">
+      <h2><span>04.</span> Trade Management & Profit Harvesting</h2>
+      <p>Managing an open position requires as much precision and focus as the initial entry strategy.</p>
+      <ul>
+        <li><strong>Scaling Out:</strong> Take partial profits at predetermined risk-to-reward milestones (e.g., 1:2 or 1:3 targets).</li>
+        <li><strong>Breakeven Stops:</strong> Move stop-loss to breakeven only after price cleanly breaks key structural resistance.</li>
+        <li><strong>Trailing Stop Discipline:</strong> Use structural market swings rather than arbitrary time intervals to trail open profit.</li>
+      </ul>
+      <div class="note-box">
+        <p><strong>Detailed Note:</strong> Letting a winning trade turn into a loser due to greed destroys long-term statistical expectancy. Secure partial profits systematically.</p>
+      </div>
+    </div>
+
+    <!-- Instruction Card 5 -->
+    <div class="card">
+      <h2><span>05.</span> Portfolio Diversification & Asset Allocation</h2>
+      <p>Avoid over-concentrating risk across heavily correlated assets or single market sectors.</p>
+      <ul>
+        <li><strong>Sector Spread:</strong> Distribute capital across non-correlated instruments or asset classes to mitigate systemic shock.</li>
+        <li><strong>Leverage Restrictions:</strong> Restrict maximum portfolio leverage to safe, manageable bounds depending on market volatility.</li>
+        <li><strong>Cash Reserve Buffer:</strong> Maintain a healthy cash allocation to capitalize on unexpected major market discounts.</li>
+      </ul>
+      <div class="note-box">
+        <p><strong>Detailed Note:</strong> Over-leveraging correlated pairs multiplies hidden exposure and can wipe out accounts simultaneously during black swan events.</p>
       </div>
     </div>
 
